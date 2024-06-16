@@ -1,0 +1,28 @@
+CREATE TABLE t_user(
+ id varchar2(20) PRIMARY KEY
+ ,name varchar2(20) NOT NULL
+ ,password varchar2(20) NOT NULL
+ ,phone varchar2(20) NOT null
+);
+DROP TABLE T_USER ;
+
+
+SELECT * FROM  t_user;
+SELECT * FROM t_email;
+SELECT te.*
+  FROM T_EMAIL te JOIN T_USER tu ON te.RECEIVER = tu.ID ;
+
+SELECT te.*
+  FROM T_EMAIL te JOIN T_USER tu ON te.SENDER  = tu.ID ;
+
+CREATE  TABLE t_email(
+NO number(5) PRIMARY KEY
+, sender varchar(20) NOT NULL
+, receiver varchar(20) NOT NULL
+, title varchar(20) NOT NULL
+, content varchar(20) NOT NULL
+, reg_date date default sysdate
+);
+ CREATE SEQUENCE t_email_seq
+ NOcache;
+SELECT * FROM T_EMAIL 
